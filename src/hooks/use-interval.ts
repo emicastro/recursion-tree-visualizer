@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react'
+import { useRef, useEffect } from 'react'
 
 const useInterval = (callback: () => void, delay: number | null) => {
   const latestCallback = useRef(() => {})
@@ -8,7 +8,7 @@ const useInterval = (callback: () => void, delay: number | null) => {
   }, [callback])
 
   useEffect(() => {
-    if (dalay !== null) {
+    if (delay !== null) {
       const id = setInterval(() => latestCallback.current(), delay)
       return () => clearInterval(id)
     }
