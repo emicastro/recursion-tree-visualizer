@@ -10,7 +10,7 @@ type Props = {
   highlight: 'current' | 'memorized' | 'none'
 }
 
-const Node = ({ center, label, highlight }: Props) => {
+const Vertex = ({ center, label, highlight }: Props) => {
   const textRef = React.useRef<SVGTextElement>(null)
   useScaleDown(textRef, label)
 
@@ -24,4 +24,4 @@ const Node = ({ center, label, highlight }: Props) => {
   )
 }
 
-export default Node
+export default Vertex
