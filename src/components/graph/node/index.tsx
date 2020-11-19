@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Circle, Text } from './styles/node'
-import { VERTEX_RADIUS } from './constants'
-import useScaleDown from '../../hooks/use-scale-down'
-import { Point } from '../../types'
+import { VERTEX_RADIUS } from '../constants'
+import useScaleDown from '../../../hooks/use-scale-down'
+import { Point } from '../../../types'
 
 type Props = {
   center: Point
@@ -10,7 +10,7 @@ type Props = {
   highlight: 'current' | 'memorized' | 'none'
 }
 
-const Vertex = ({ center, label, highlight }: Props) => {
+const Node = ({ center, label, highlight }: Props) => {
   const textRef = React.useRef<SVGTextElement>(null)
   useScaleDown(textRef, label)
 
@@ -24,4 +24,4 @@ const Vertex = ({ center, label, highlight }: Props) => {
   )
 }
 
-export default Vertex
+export default Node
