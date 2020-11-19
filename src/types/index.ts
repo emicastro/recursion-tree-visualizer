@@ -19,3 +19,16 @@ export type EdgesData = Record<
     label?: string
   }
 >
+
+export type Variable = { name: string; value: string }
+export type FunctionData = {
+  name?: string
+  params: Variable[]
+  body: string
+  variables?: Variable[] // variables that need to be accessed from the fn scope
+}
+
+// adjList[u]: [{v, w}, ...], being u -w-> v
+export type AdjList = Record<number, { v: number; w?: number }[]>
+// args[u]: vertex u param values
+export type Args = Record<number, any[]>
